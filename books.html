@@ -9,23 +9,28 @@
             <div id="buttonNew">
                 <button id="addNewBook">New Book</button>
             </div>
-            <div id="bookForm" class="hidden">
-                <form>
+            <div id="bookForms" class="hidden">
+
+                <form method="post">
                     <label for="title">Title
-                        <input type="text" id="title" class="titleInput" name="title" required>
+                        <input type="text" id="title" class="titleInput" name="title" autocomplete="off" required>
                     </label>
 
                     <label for="author">Author
-                        <input type="text" id="author" class="authorInput" name="author" required>
+                        <input type="text" id="author" class="authorInput" name="author" autocomplete="off" required>
                     </label>
 
                     <label for="pages">Number of pages
-                        <input type="text" id="pages" class="pagesInput" name="pages" required>
+                        <input type="text" id="pages" class="pagesInput" name="pages" autocomplete="off" required>
                     </label>
 
-                    <button type="submit">Add</button>
+                    <button type="submit" id="submit">Add</button>
+                    <button type="button" id="seeLibrary" onclick="ShowTable()">See the library</button>
+
 
                 </form>
+                <div id="table-container"></div>
+
             </div>
         </div>
     </body>
