@@ -8,8 +8,8 @@ function Book(title, author, pages) {
   this.id = self.crypto.randomUUID()
 }
 
-function addBookToLibrary(title, author, pages) {
-    const book = new Book(title, author, pages)
+Book.prototype.addBookToLibrary = function() {
+    const book = new Book(this.title, this.author, this.pages)
     myLibrary.push(book); 
     // take params, create a book then store it in the array
 }
@@ -65,7 +65,8 @@ bookForm.addEventListener("submit", async (event) => {
   const pages = document.querySelector('input[name=pages]').value;
 
   try{
-  const book = addBookToLibrary(title, author, pages)
+  const book = new Book(title, author, pages)
+  book.addBookToLibrary()
   
   }catch(e){
     console.log(e)
